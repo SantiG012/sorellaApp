@@ -7,6 +7,10 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 
 import { Tab2PageRoutingModule } from './tab2-routing.module';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { AbstractTextTransferService } from 'src/domain/interfaces';
+import { TextTransferService } from 'src/application/services/shared/text-transfer.service';
+import { AbstractProductsTransferService } from 'src/domain/interfaces/abstract-products-transfer.service'; 
+import { ProductsTransferService } from 'src/application/services/shared/products-transfer.service';
 
 @NgModule({
   imports: [
@@ -19,6 +23,10 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
   declarations: [
     Tab2Page,
     SearchBarComponent
+  ],
+  providers: [
+    {provide:AbstractTextTransferService, useClass: TextTransferService},
+    {provide:AbstractProductsTransferService, useClass: ProductsTransferService}
   ]
 })
 export class Tab2PageModule {}

@@ -14,8 +14,7 @@ import { TextTransferService } from 'src/application/services/shared/text-transf
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-  {provide: AbstractTextTransferService, useClass: TextTransferService}],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
