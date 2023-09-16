@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AbstractTextTransfer } from 'src/domain/interfaces';
 
 @Component({
   selector: 'app-search-bar',
@@ -9,8 +10,12 @@ export class SearchBarComponent  implements OnInit {
 
   searchInput!: string;
 
-  constructor() { }
+  constructor(private textTransferService:AbstractTextTransfer<string>) { }
 
   ngOnInit() {}
+
+  onInputChange(){
+    this.textTransferService.setText(this.searchInput);
+  }
 
 }
