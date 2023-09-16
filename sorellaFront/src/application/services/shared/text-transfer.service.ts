@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { AbstractTextTransfer } from 'src/domain/interfaces';
+import { AbstractTextTransferService } from 'src/domain/interfaces';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TextTransferService<T> implements AbstractTextTransfer<T>{
+export class TextTransferService<T> implements AbstractTextTransferService<T>{
 
   private text: Subject<T> = new Subject<T>();
 

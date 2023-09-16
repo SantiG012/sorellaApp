@@ -1,1 +1,1 @@
-export * from './AbstractTextTransfer.service';
+export * from './abstract-text-transfer.service';
