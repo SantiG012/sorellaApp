@@ -1,7 +1,0 @@
-{
-  "name": "sorellaApp",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
