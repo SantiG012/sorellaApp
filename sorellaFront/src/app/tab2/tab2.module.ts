@@ -11,6 +11,7 @@ import { AbstractTextTransferService } from 'src/domain/interfaces';
 import { TextTransferService } from 'src/utilities/shared';
 import { AbstractProductsTransferService } from 'src/domain/interfaces/abstract-products-transfer.service'; 
 import { ProductsTransferService } from 'src/utilities/shared';
+import { ProductListComponent } from './components/product-list/product-list.component';
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import { ProductsTransferService } from 'src/utilities/shared';
   ],
   declarations: [
     Tab2Page,
-    SearchBarComponent
+    SearchBarComponent,
+    ProductListComponent
   ],
   providers: [
     {provide:AbstractTextTransferService, useClass: TextTransferService},
