@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable, Subject, debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
+import { AbstractProductService } from 'src/application/abstractions';
 
 @Component({
   selector: 'app-tab2',
@@ -12,11 +13,15 @@ export class Tab2Page {
   productsNames$!:Observable<string[]>;
 
   constructor(
-    
+    private productService: AbstractProductService
   ) {}
 
   ngOnInit(){
-    //TODO: Implementar el observable
+    this.productsNames$ = this.searchTerms.pipe(
+      debounceTime(300),
+      distinctUntilChanged(),
+      switchMap((term: string) => this.productService.getProductsNamesByFilterName(term))
+    );
   }
 
   onInputChange(){
