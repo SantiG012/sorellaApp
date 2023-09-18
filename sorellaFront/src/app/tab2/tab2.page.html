@@ -12,7 +12,10 @@
       <ion-title size="large">Tab 2</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <app-search-bar></app-search-bar>
-  <app-product-list></app-product-list>
+  
+  <ion-item>
+    <ion-label position="floating">Busca un producto</ion-label>
+    <ion-input [(ngModel)]="searchInput" (input)="onInputChange()"></ion-input>
+    <ion-icon name="search-outline" slot="start"></ion-icon>
+  </ion-item>
 </ion-content>
