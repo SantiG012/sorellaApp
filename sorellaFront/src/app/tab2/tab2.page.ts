@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable, Subject, debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
 import { AbstractProductService } from 'src/application/abstractions';
+import { Product } from 'src/domain/models';
 
 @Component({
   selector: 'app-tab2',
@@ -11,6 +12,7 @@ export class Tab2Page {
   searchInput!: string;
   private searchTerms = new Subject<string>();
   productsNames$!:Observable<string[]>;
+  products$!:Observable<Product[]>;
 
   constructor(
     private productService: AbstractProductService
@@ -26,5 +28,9 @@ export class Tab2Page {
 
   onInputChange(){
     this.searchTerms.next(this.searchInput);
+  }
+
+  onItemClicked(productName:string):void{
+    this.products$ = this.productService.getProductsByName(productName);
   }
 }
