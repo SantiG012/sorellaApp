@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Observable, Subject, debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-tab2',
@@ -7,10 +8,18 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
   searchInput!: string;
+  private searchTerms = new Subject<string>();
+  productsNames$!:Observable<string[]>;
 
-  constructor() {}
+  constructor(
+    
+  ) {}
+
+  ngOnInit(){
+    //TODO: Implementar el observable
+  }
 
   onInputChange(){
-    
+    this.searchTerms.next(this.searchInput);
   }
 }
