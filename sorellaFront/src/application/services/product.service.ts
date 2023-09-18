@@ -7,7 +7,7 @@ import { ProductRepository } from 'src/domain/repositories';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductServiceService implements AbstractProductService {
+export class ProductService implements AbstractProductService {
 
   constructor(
     private productRepository:ProductRepository
