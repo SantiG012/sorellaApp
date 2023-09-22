@@ -12,9 +12,21 @@
     align-items: center;
 }
 
-
-
 .search-bar__filter{
-    padding-left: .5rem;
     flex: 30;
+}
+
+ion-card{
+    padding: .1rem;
+}
+
+.product-info{
+    max-width: 7rem;
+    max-height: 10rem;
+}
+
+ion-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

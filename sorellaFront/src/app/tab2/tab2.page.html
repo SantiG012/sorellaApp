@@ -40,18 +40,19 @@
   </ion-list>
 
   <ion-card>
-    <ion-card-header>
-      <ion-card-title>Un titulo</ion-card-title>
-      <ion-card-subtitle>Un subtitulo</ion-card-subtitle>
-    </ion-card-header>
-
     <ion-card-content>
       <ion-grid>
         <ion-row>
-          <ion-col *ngFor="let product of products$ | async">
-           <ion-item>
-              <ion-label>{{ product }}</ion-label>
-           </ion-item>
+          <ion-col *ngFor="let product of products" size="auto">
+              <ion-card class="product-info">
+                <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+
+                <ion-card-header>
+                  <ion-card-title>{{ product.productName }}</ion-card-title>
+                  <ion-card-subtitle>{{ product.productPrice }}</ion-card-subtitle>
+                </ion-card-header>
+
+              </ion-card>
           </ion-col>
         </ion-row>
       </ion-grid>
