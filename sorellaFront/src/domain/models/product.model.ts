@@ -1,7 +1,15 @@
 export interface Product{
     _id:string;
-    productName:string;
-    productPrice:number;
-    prodcutCategories:[string];
-    status:string;
+    nombre:string;
+    estado:boolean;
+    precio:number;
+    usuario:string;
+    categoria:string;
+    colores:string[];
+    descripcion:string;
+    disponible:boolean;
+    imagenes:[{
+        url:string;
+        posicion:number;
+    }];
 }
