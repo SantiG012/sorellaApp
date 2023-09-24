@@ -20,51 +20,64 @@
           </ion-card-header>
 
           <ion-card-content class="ion-padding">
-            <ion-grid>
+            <form [formGroup]="formData">
 
-              <ion-row>
-                <ion-col>
-                  <ion-item>
-                    <ion-label position="floating">Email</ion-label>
-                    <ion-input type="email"></ion-input>
-                  </ion-item>
-                </ion-col>
-              </ion-row>
+              <ion-grid>
+  
+                <ion-row>
+                  <ion-col>
+                    <ion-item>
+                      <ion-label position="floating">Email</ion-label>
+                      <ion-input type="email" formControlName="emailField"></ion-input>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+  
+                <ion-row>
+                  <ion-col>
+                    <ion-item>
+                      <ion-label position="floating">Username</ion-label>
+                      <ion-input type="text" formControlName="usernameField"></ion-input>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+  
+                <ion-row>
+                  <ion-col>
+                    <ion-item>
+                      <ion-label position="floating">Password</ion-label>
+                      <ion-input type="password" formControlName="passwordField"></ion-input>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+  
+                <ion-row>
+                  <ion-col>
+                    <ion-item>
+                      <ion-label position="floating">Repeat the password</ion-label>
+                      <ion-input type="password" formControlName="rePasswordField"></ion-input>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
 
-              <ion-row>
-                <ion-col>
-                  <ion-item>
-                    <ion-label position="floating">Username</ion-label>
-                    <ion-input type="email"></ion-input>
-                  </ion-item>
-                </ion-col>
-              </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <ion-item>
+                      <ion-label position="floating">Phone</ion-label>
+                      <ion-input type="Phone" formControlName="phoneField"></ion-input>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+  
+                <ion-row>
+                  <ion-col>
+                    <ion-button (click)="postUser()" expand="block" color="primary"><strong>Sing up</strong></ion-button>
+                  </ion-col>
+                </ion-row>
+  
+              </ion-grid>
 
-              <ion-row>
-                <ion-col>
-                  <ion-item>
-                    <ion-label position="floating">Password</ion-label>
-                    <ion-input type="password"></ion-input>
-                  </ion-item>
-                </ion-col>
-              </ion-row>
-
-              <ion-row>
-                <ion-col>
-                  <ion-item>
-                    <ion-label position="floating">Repeat the password</ion-label>
-                    <ion-input type="password"></ion-input>
-                  </ion-item>
-                </ion-col>
-              </ion-row>
-
-              <ion-row>
-                <ion-col>
-                  <ion-button expand="block" color="primary"><strong>Sing up</strong></ion-button>
-                </ion-col>
-              </ion-row>
-
-            </ion-grid>
+            </form>
           </ion-card-content>
         </ion-card>
       </ion-col>
