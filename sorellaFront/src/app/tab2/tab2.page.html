@@ -23,9 +23,8 @@
 
       <ion-item class="search-bar__filter">
           <ion-select placeholder="filtrar">
-            <ion-select-option value="apple">Apple</ion-select-option>
-            <ion-select-option value="banana">Banana</ion-select-option>
-            <ion-select-option value="orange">Orange</ion-select-option>
+            <ion-select-option value="categoria">Categoría</ion-select-option>
+            <ion-select-option value="producto">producto</ion-select-option>
           </ion-select>
       </ion-item>
     </ion-row>
@@ -33,9 +32,9 @@
 
 
 
-  <ion-list>
-    <ion-item *ngFor="let productName of productsNames$ | async" (click)="onItemClicked(productName)">
-      <ion-label>{{ productName }}</ion-label>
+  <ion-list class="filter-list">
+    <ion-item *ngFor="let productName of productsNames$ | async" (click)="onItemClicked(productName)" class="filter-list__item">
+      <ion-label  class="filter-list__label">{{ productName | titlecase }}</ion-label>
     </ion-item>
   </ion-list>
 
@@ -48,7 +47,7 @@
                 <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
 
                 <ion-card-header>
-                  <ion-card-title>{{ product.nombre }}</ion-card-title>
+                  <ion-card-title>{{ product.nombre | titlecase }}</ion-card-title>
                   <ion-card-subtitle>{{ product.precio }}</ion-card-subtitle>
                 </ion-card-header>
 

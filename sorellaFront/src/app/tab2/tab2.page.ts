@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Observable, Subject, debounceTime, distinctUntilChanged, map, switchMap } from 'rxjs';
 import { AbstractProductService } from 'src/application/abstractions';
 import { Product } from 'src/domain/models';
-import { CapitalizerUtil } from 'src/utils';
 
 @Component({
   selector: 'app-tab2',
@@ -24,9 +23,7 @@ export class Tab2Page {
       debounceTime(300),
       distinctUntilChanged(),
       switchMap((term: string) => this.productService.getProductsByName(term)),
-      map((products:Product[]) => products.map(product => {
-        return CapitalizerUtil.capitalize(product.nombre.toLocaleLowerCase());
-      }))
+      map((products:Product[]) => products.map((product:Product) => product.nombre))
     );
   }
 
