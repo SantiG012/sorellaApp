@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Observable, Subject, debounceTime, distinctUntilChanged, map, switchMap } from 'rxjs';
+import { Observable, Subject, debounceTime, distinctUntilChanged, filter, map, switchMap } from 'rxjs';
 import { AbstractProductService } from 'src/application/abstractions';
 import { Product } from 'src/domain/models';
 
@@ -22,6 +22,7 @@ export class Tab2Page {
     this.productsNames$ = this.searchTerms.pipe(
       debounceTime(300),
       distinctUntilChanged(),
+      filter((term: string) => term.trim() !== ''),
       switchMap((term: string) => this.productService.getProductsByName(term)),
       map((products:Product[]) => products.map((product:Product) => product.nombre))
     );

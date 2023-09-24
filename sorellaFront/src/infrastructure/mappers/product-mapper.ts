@@ -1,4 +1,4 @@
-import { ProductDto } from "src/domain/DTO/product/product.dto";
+/* import { ProductDto } from "src/domain/DTO/product/product.dto";
 import { Mapper } from "src/domain/common";
 import { Product } from "src/domain/models";
 
@@ -20,4 +20,4 @@ export class ProductMapper extends Mapper<Product, ProductDto> {
         status:'active'
     };
   }
-}
+} */
