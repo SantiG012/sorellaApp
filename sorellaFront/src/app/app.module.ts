@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AbstractProductService } from 'src/application/abstractions';
 import { ProductService } from 'src/application/services';
-import { ProductRepository } from 'src/domain/repositories';
+import { AbstractProductRepository } from 'src/domain/repositories';
 import { ProductImplementationRepository } from 'src/application/repositories';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -20,7 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     { provide:AbstractProductService, useClass:ProductService },
-    { provide: ProductRepository, useClass:ProductImplementationRepository }
+    { provide: AbstractProductRepository, useClass:ProductImplementationRepository }
   ],
   bootstrap: [AppComponent],
 })
