@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AbstractProductService } from '../abstractions';
 import { Observable } from 'rxjs';
-import { Product } from 'src/domain/models';
-import { AbstractProductRepository } from 'src/domain/repositories';
+import { Product } from 'src/app/domain/models';
+import { AbstractProductRepository } from 'src/app/domain/repositories';
 
 @Injectable({
   providedIn: 'root'

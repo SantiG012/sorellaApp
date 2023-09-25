@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable, Subject, debounceTime, distinctUntilChanged, filter, map, switchMap } from 'rxjs';
-import { AbstractProductService } from 'src/application/abstractions';
-import { Product } from 'src/domain/models';
+import { AbstractProductService } from 'src/app/application/abstractions';
+import { Product } from 'src/app/domain/models';
 
 @Component({
   selector: 'app-tab2',
