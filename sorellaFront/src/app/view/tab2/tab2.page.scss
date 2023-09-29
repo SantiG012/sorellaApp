@@ -1,0 +1,61 @@
+.search-bar{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar__input{
+    flex: 70;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar__filter{
+    flex: 30;
+}
+
+ion-card{
+    padding: .1rem;
+}
+
+.product{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    margin-top: .5rem;
+}
+
+.product__image{
+    margin: .3rem;
+    object-fit: cover;
+    width: 45%;
+}
+
+.product__info{
+    width: 55%;
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+.filter-list__item{
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+}
+
+//A hover effect that changes the background color of the item when the user hovers over it
+.filter-list__item:hover{
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+ion-card-header{
+    padding: .2rem;
+}
+
+
+
+ion-card-title{
+    font-size: 1.1rem;
+}
