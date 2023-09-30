@@ -41,20 +41,7 @@
   <ion-card>
     <ion-card-content>
           <ion-list *ngFor="let product of products$ | async" size="auto">
-              <ion-card class="product">
-                <img class="product__image" alt="Silhouette of mountains" [src]="product.imagenes[0].url" />
-
-                <ion-card-header class="product__info">
-                  <ion-card-title>
-                    {{ product.nombre | titlecase }}
-                  </ion-card-title>
-                  <ion-card-subtitle>
-                    {{ product.precio }} COP
-                    {{ product.descripcion}}
-                  </ion-card-subtitle>
-                </ion-card-header>
-
-              </ion-card>
+              <app-product [product]="product"></app-product>
           </ion-list>
     </ion-card-content>
   </ion-card>

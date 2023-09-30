@@ -19,4 +19,8 @@ export class ProductComponent<T>  implements OnInit {
 
   ngOnInit() {}
 
+  onProductClick() {
+    this.clickedProduct.emit(this.product);
+  }
+
 }
