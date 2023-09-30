@@ -11,17 +11,19 @@ import { ProductService } from 'src/app/application/services';
 import { AbstractProductRepository } from 'src/app/domain/repositories';
 import { ProductImplementationRepository } from 'src/app/infrastructure/repositories';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, ReactiveFormsModule, FormsModule],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     { provide:AbstractProductService, useClass:ProductService },
     { provide: AbstractProductRepository, useClass:ProductImplementationRepository }
   ],
-  bootstrap: [AppComponent],
-})
+
+  bootstrap: [AppComponent],})
+  
 export class AppModule {}
