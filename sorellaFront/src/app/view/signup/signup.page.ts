@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
-import { UserServiceService } from '../services/user-service.service';
+import { UserServiceService } from '../../application/services/user-service.service';
 
 @Component({
   selector: 'app-signup',
