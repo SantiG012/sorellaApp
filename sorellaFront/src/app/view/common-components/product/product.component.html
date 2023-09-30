@@ -1,5 +1,5 @@
 <ng-template #defaultProductTemplate let-product>
-  <ion-card class="product">
+  <ion-card class="product" (click)="onProductClick()">
     <img class="product__image" alt="Silhouette of mountains" [src]="product.imagenes[0].url" />
 
     <ion-card-header class="product__info">

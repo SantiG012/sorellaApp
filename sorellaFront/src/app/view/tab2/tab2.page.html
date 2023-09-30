@@ -41,7 +41,7 @@
   <ion-card>
     <ion-card-content>
           <ion-list *ngFor="let product of products$ | async" size="auto">
-              <app-product [product]="product"></app-product>
+              <app-product [product]="product" (clickedProduct)="onProductClicked($event)"></app-product>
           </ion-list>
     </ion-card-content>
   </ion-card>

@@ -35,4 +35,9 @@ export class Tab2Page {
   onItemClicked(productName:string):void{
     this.products$ = this.productService.getProductsByName(productName);
   }
+
+  onProductClicked(product: Product) {
+    // Handle the clicked product here
+    console.log('Product clicked:', product);
+  }
 }
