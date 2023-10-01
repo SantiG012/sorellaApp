@@ -18,28 +18,10 @@
 
 ion-card{
     padding: .1rem;
+    margin: 0.5rem;
+    background-color: transparent;
 }
 
-/* .product{
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    margin-top: .5rem;
-}
-
-.product__image{
-    margin: .3rem;
-    object-fit: cover;
-    width: 45%;
-}
-
-.product__info{
-    width: 55%;
-    margin-left: 1rem;
-    display: flex;
-    flex-direction: column;
-} */
 .filter-list__item{
     cursor: pointer;
     transition: all .1s ease-in-out;
@@ -54,8 +36,13 @@ ion-card-header{
     padding: .2rem;
 }
 
-
-
 ion-card-title{
     font-size: 1.1rem;
+}
+
+.product-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+    padding: 1rem;
 }
