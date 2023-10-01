@@ -9,7 +9,7 @@
 
 .product__image{
     width: 100%;
-    aspect-ratio: 2/1;
+    aspect-ratio: 2/1.6;
     object-fit: cover;
 }
 
@@ -17,6 +17,10 @@
     font-size: 1.1rem;
     font-weight: 600;
     margin: .1rem 0;
+    max-width: 12ch;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .product__price{
