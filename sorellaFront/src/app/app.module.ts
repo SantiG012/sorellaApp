@@ -12,11 +12,12 @@ import { AbstractProductRepository } from 'src/app/domain/repositories';
 import { ProductImplementationRepository } from 'src/app/infrastructure/repositories';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FabComponent } from './view/common-components/fab/fab.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, FabComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, ReactiveFormsModule, FormsModule],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
