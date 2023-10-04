@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { CarProductDto } from "src/app/domain/DTO/product";
-import { AbstractStorageService } from "src/app/domain/common/abstractions";
 import { Storage } from "@ionic/storage-angular";
 import { AbstractProductStorageService } from 'src/app/domain/services/storage/abstract-product-storage.service';
 

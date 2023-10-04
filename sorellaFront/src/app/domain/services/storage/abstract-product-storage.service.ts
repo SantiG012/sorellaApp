@@ -1,6 +1,6 @@
-import { AbstractStorageService } from "../../common/abstractions";
-import { Product } from "../../models";
+import { AbstractStorageService } from "../../common";
+import { CarProductDto } from "../../DTO/product";
 
-export abstract class AbstractProductStorageService extends AbstractStorageService<Product> {
+export abstract class AbstractProductStorageService extends AbstractStorageService<CarProductDto[]> {
 
 }
