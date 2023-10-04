@@ -9,5 +9,5 @@ export interface CarProductDto {
         url:string;
         posicion:number;
     }];
-    cantidad:number;
+    cantidad:number | null;
 }
