@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Observable, Subject, debounceTime, distinctUntilChanged, filter, map, switchMap } from 'rxjs';
+import { Observable, Subject, debounceTime, distinctUntilChanged, filter, switchMap } from 'rxjs';
 import { AbstractProductService } from 'src/app/application/abstractions';
 import { Product } from 'src/app/domain/models';
 
@@ -11,7 +11,6 @@ import { Product } from 'src/app/domain/models';
 export class Tab2Page {
   searchInput!: string;
   private searchTerms = new Subject<string>();
-  productsNames$!:Observable<string[]>;
   products$!:Observable<Product[]>;
 
   constructor(
@@ -19,21 +18,16 @@ export class Tab2Page {
   ) {}
 
   ngOnInit(){
-    this.productsNames$ = this.searchTerms.pipe(
+    this.products$ = this.searchTerms.pipe(
       debounceTime(300),
       distinctUntilChanged(),
-      filter((term: string) => term.trim() !== ''),
-      switchMap((term: string) => this.productService.getProductsByName(term)),
-      map((products:Product[]) => products.map((product:Product) => product.nombre))
+      filter((term:string) => term.length > 0),
+      switchMap((term:string) => this.productService.getProductsByName(term))
     );
   }
 
   onInputChange(){
     this.searchTerms.next(this.searchInput);
-  }
-
-  onItemClicked(productName:string):void{
-    this.products$ = this.productService.getProductsByName(productName);
   }
 
   onProductClicked(product: Product) {
