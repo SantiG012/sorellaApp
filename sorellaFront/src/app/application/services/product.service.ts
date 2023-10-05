@@ -16,4 +16,8 @@ export class ProductService implements AbstractProductService {
   getProductsByName(name: string): Observable<Product[]> {
     return this.productRepository.getProductsByName(name);
   }
+
+  getProductById(id: string): Observable<Product> {
+    return this.productRepository.getProductById(id);
+  }
 }
