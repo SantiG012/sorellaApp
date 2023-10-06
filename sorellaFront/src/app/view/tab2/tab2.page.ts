@@ -29,9 +29,4 @@ export class Tab2Page {
   onInputChange(){
     this.searchTerms.next(this.searchInput);
   }
-
-  onProductClicked(product: Product) {
-    // Handle the clicked product here
-    console.log('Product clicked:', product);
-  }
 }
