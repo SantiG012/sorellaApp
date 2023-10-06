@@ -25,12 +25,12 @@ export class ProductDetailComponent  implements OnInit {
     const id = this.router.snapshot.paramMap.get('id');
     this.productService.getProductById(id!).pipe(
       tap(product => {
-        product.imagenes = product.imagenes.sort((a, b) => a.posicion - b.posicion);
-        this.product = product;
+        product = this.sortProductImages(product);
+        this.setProduct(product);
         this.isProductLoaded = true;
       }),
       catchError(err => {
-        console.error("Mierda hijueputa",err);
+        console.error(err);
         return new Observable<Product>();
       })
     ).subscribe();
@@ -46,6 +46,15 @@ export class ProductDetailComponent  implements OnInit {
 
   goBack(): void {
     this.location.back();
+  }
+
+  private sortProductImages(product: Product): Product {
+    product.imagenes = product.imagenes.sort((a, b) => a.posicion - b.posicion);
+    return product;
+  }
+
+  private setProduct(product: Product): void {
+    this.product = product;
   }
 
 }
