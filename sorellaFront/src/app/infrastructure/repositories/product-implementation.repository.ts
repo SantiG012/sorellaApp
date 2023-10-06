@@ -16,6 +16,6 @@ export class ProductImplementationRepository implements AbstractProductRepositor
   }
 
   getProductById(id: string): Observable<Product> {
-    return this.http.get<Product>(`${process.env['API_URL']}/buscar/producto/${id}`);
+    return this.http.get<Product>(`${process.env['API_URL']}/productos/${id}`);
   }
 }
