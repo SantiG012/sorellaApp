@@ -37,6 +37,7 @@
       *ngFor="let product of products$ | async"
       [product]="product"
       (clickedProduct)="onProductClicked($event)"
+      routerLink="product-detail/{{product._id}}"
       >
       </app-product>
     </div>

@@ -6,7 +6,7 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 const routes: Routes = [
   {
     path: '',
-    component: ProductDetailComponent,
+    component: Tab2Page,
   },
   {
     path: 'product-detail/:id',
