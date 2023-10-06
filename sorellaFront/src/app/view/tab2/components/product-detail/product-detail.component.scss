@@ -1,3 +1,16 @@
+.go-back-icon{
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: 2rem;
+    color: #a3951f;
+    cursor: pointer;
+}
+
+.go-back-icon:hover{
+    color: #ffffff;
+}
+
 .product-images{
     margin-top: 7rem;
     width: 100%;
@@ -23,6 +36,11 @@
     border-radius: 10%;
 }
 
+/* Add a new class to change the style when a product-images__grid__image is selected applying BEM notation  to name the class*/
+.product-images__grid__image--selected{
+    border: 2px solid #a3951f;
+}
+
 .product-info p {
     color: black;
     margin: 0;
@@ -37,7 +55,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: start;
+    justify-content:  space-evenly;
 }
 
 .product-info__title{

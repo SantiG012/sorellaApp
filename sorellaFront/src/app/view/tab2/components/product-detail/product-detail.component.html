@@ -1,21 +1,22 @@
-<div class="product-images">
-   <img src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?cs=srgb&dl=pexels-pixabay-268533.jpg&fm=jpg" class="product-images__selected-image"/>
-<div class="product-images__grid">
-    <img src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?cs=srgb&dl=pexels-pixabay-268533.jpg&fm=jpg" class="product-images__grid__image"/>
-    <img src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?cs=srgb&dl=pexels-pixabay-268533.jpg&fm=jpg" class="product-images__grid__image"/>
-    <img src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?cs=srgb&dl=pexels-pixabay-268533.jpg&fm=jpg" class="product-images__grid__image"/>
+<ion-icon name="arrow-back-circle-outline" (click)="goBack()" class="go-back-icon"></ion-icon>
+
+<div class="product-images" *ngIf="isProductLoaded">
+   <img [src]="product.imagenes[selectedImageIndex].url" class="product-images__selected-image"/>
+  <div class="product-images__grid">
+    <img *ngFor="let image of product.imagenes; let i = index" [src]="image.url" class="product-images__grid__image" (click)="selectImage(i)"
+    [ngClass]="{'product-images__grid__image--selected':isSelectedImage(i)}"/>
   </div>
 </div>
 
-<div class="product-info">
+<div class="product-info" *ngIf="isProductLoaded">
   <div class="product-info__title">
-    <p>Product Title</p>
+    <p>{{product.nombre | titlecase}}</p>
   </div>
   <div class="product-info__description">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro eos ullam sunt quia fugiat, accusamus voluptates incidunt? Facilis ea temporibus</p>
+    <p>{{product.descripcion}}</p>
   </div>
   <div class="product-info__add-to-cart">
-    <p class="product-info__add-to-cart__price">$100</p>
+    <p class="product-info__add-to-cart__price">${{product.precio}}</p>
     <button class="product-info__add-to-cart__button">Add to cart</button>
   </div>
 </div>
