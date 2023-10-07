@@ -1,0 +1,50 @@
+<ion-content [fullscreen]="true">
+  <ion-card>
+
+    <ion-card-header>
+      <ion-card-title>Shopping cart</ion-card-title>
+      <ion-card-subtitle>This is your shopping cart right now</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-list>
+      <ion-list-header>
+        <ion-label> <strong> Producto </strong></ion-label>
+        <ion-label> <strong> Precio </strong></ion-label>
+        <ion-label> <strong> Cantidad </strong></ion-label>
+      </ion-list-header>
+
+      <ion-item *ngFor="let product of products">
+        <ion-grid>
+          <ion-row>
+            <ion-col>{{product.name}}</ion-col>
+            <ion-col>{{product.price}}</ion-col>
+            <ion-col>{{product.quantity}}</ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+
+    </ion-list>
+  </ion-card>
+
+ <ion-card>
+
+  
+
+
+  <ion-grid>
+    <ion-row>
+
+      <ion-col>
+        <ion-button expand="block" color="primary">Seguir comprando</ion-button>
+      </ion-col>
+
+      <ion-col>
+        <ion-button expand="block" color="primary">Finalizar compra</ion-button>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+ </ion-card>
+
+</ion-content>
