@@ -7,6 +7,7 @@ import { CommonComponentsModule } from '../common-components/common-components.m
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 import { Tab2PageRoutingModule } from './tab2-routing.module';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { Tab2PageRoutingModule } from './tab2-routing.module';
   ],
   declarations: [
     Tab2Page,
+    ProductDetailComponent
   ],
   providers: [
   ]

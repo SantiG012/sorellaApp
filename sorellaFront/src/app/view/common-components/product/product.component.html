@@ -3,13 +3,19 @@
     <img class="product__image" alt="Silhouette of mountains" [src]="product.imagenes[0].url" />
 
     <ion-card-header class="product__info">
-      <ion-card-title>
+      <ion-card-title class="product__title">
         {{ product.nombre | titlecase }}
       </ion-card-title>
-      <ion-card-subtitle>
-        {{ product.precio }} COP
-        {{ product.descripcion}}
+      <ion-card-subtitle class="product__price">
+        {{ product.precio | currency }}
       </ion-card-subtitle>
+      <!-- Add a description to the product -->
+      <ion-card-content class="product__description">
+        <p>
+          {{ product.descripcion}}
+        </p>
+      </ion-card-content>
+
     </ion-card-header>
   </ion-card>
 </ng-template>

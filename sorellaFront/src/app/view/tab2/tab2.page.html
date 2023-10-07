@@ -31,19 +31,15 @@
   </ion-grid>
 
 
-
-  <ion-list class="filter-list">
-    <ion-item *ngFor="let productName of productsNames$ | async" (click)="onItemClicked(productName)" class="filter-list__item">
-      <ion-label  class="filter-list__label">{{ productName | titlecase }}</ion-label>
-    </ion-item>
-  </ion-list>
-
   <ion-card>
-    <ion-card-content>
-          <ion-list *ngFor="let product of products$ | async" size="auto">
-              <app-product [product]="product" (clickedProduct)="onProductClicked($event)"></app-product>
-          </ion-list>
-    </ion-card-content>
+    <div class="product-grid">
+      <app-product
+      *ngFor="let product of products$ | async"
+      [product]="product"
+      routerLink="product-detail/{{product._id}}"
+      >
+      </app-product>
+    </div>
   </ion-card>
 
 </ion-content>
