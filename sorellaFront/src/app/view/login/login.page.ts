@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { UserServiceService } from '../../application/services/user-service.service';
 import { AuthService } from '../../application/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -20,16 +21,13 @@ export class LoginPage implements OnInit {
       password: this.formData.controls.passwordField.value
     }
 
-    //TODO
-    // Implement httpClient request to restSorella trying to authenticate with given credentials 
-
     this.authService.authenticateUser(user).subscribe((data: any) => {
-      console.log(data);
+      this.router.navigate(['/tabs/tab2'])
     })
 
   }
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
   }

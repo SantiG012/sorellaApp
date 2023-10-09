@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
-  private authUrl = 'http://localhost:8080/api/auth'
+  private authUrl = 'https://restsorella-production.up.railway.app/api/auth'
 
   constructor(private http: HttpClient) { }
 
