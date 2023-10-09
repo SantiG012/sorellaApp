@@ -3,7 +3,10 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable, catchError, tap } from 'rxjs';
 import { AbstractProductService } from 'src/app/application/abstractions';
 import { Product } from 'src/app/domain/models';
+import { CarProductDto } from 'src/app/domain/DTO/product'; 
 import { Location } from '@angular/common';
+import { CartStorageService } from 'src/app/application/services/cart-storage.service';
+import { ShoppingCartMapperService } from 'src/app/infrastructure/mappers/shopping-cart-mapper.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -18,7 +21,9 @@ export class ProductDetailComponent  implements OnInit {
   constructor(
     private readonly productService: AbstractProductService,
     private readonly router: ActivatedRoute,
-    private readonly location: Location
+    private readonly location: Location,
+    private readonly cartStorageService: CartStorageService,
+    private readonly ShoppingCartMapper: ShoppingCartMapperService,
   ) { }
 
   ngOnInit() {
@@ -55,6 +60,11 @@ export class ProductDetailComponent  implements OnInit {
 
   private setProduct(product: Product): void {
     this.product = product;
+  }
+
+  async addProductToCart(product: Product){
+    const carProductDto:CarProductDto = this.ShoppingCartMapper.mapFrom(product);
+    await this.cartStorageService.addProductToCart(carProductDto);
   }
 
 }
