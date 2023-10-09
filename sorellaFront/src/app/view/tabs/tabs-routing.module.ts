@@ -5,7 +5,7 @@ import { CommonComponentsModule } from '../common-components/common-components.m
 
 const routes: Routes = [
   {
-    path: 'tabs',
+    path: '',
     component: TabsPage,
     children: [
       {
