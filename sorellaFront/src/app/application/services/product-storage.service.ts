@@ -18,17 +18,14 @@ export class ProductStorageService implements AbstractProductStorageService  {
         this._storage = storage;
     }
     
-
-
     public async get(key: string): Promise<CarProductDto[] | null> {
         if (!await this.keyExists(key)) {return null;}
 
-        return await this._storage.get(key);
+        return JSON.parse(await this._storage.get(key));
     }
 
     public async set(key: string, value: CarProductDto[]): Promise<void> {
         const jsonData = this.convertToJSON(value);
-
         return await this._storage.set(key, jsonData);
     }
 

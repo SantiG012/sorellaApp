@@ -12,15 +12,22 @@ import { AbstractProductRepository } from 'src/app/domain/repositories';
 import { ProductImplementationRepository } from 'src/app/infrastructure/repositories';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FabComponent } from './view/common-components/fab/fab.component';
 import { AbstractProductStorageService } from './domain/services/storage/abstract-product-storage.service';
 import { ProductStorageService } from './application/services/product-storage.service';
+import { CartStorageService } from './application/services/cart-storage.service';
 
 
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, ReactiveFormsModule, FormsModule, IonicStorageModule.forRoot()],
+  declarations: [AppComponent,],
+  imports: [
+    BrowserModule, IonicModule.forRoot(), AppRoutingModule,
+    HttpClientModule, ReactiveFormsModule, FormsModule,
+    IonicStorageModule.forRoot()
+    ],
   providers: [
+    {provide: CartStorageService, useClass: CartStorageService},
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     { provide:AbstractProductService, useClass:ProductService },
     { provide: AbstractProductRepository, useClass:ProductImplementationRepository },
