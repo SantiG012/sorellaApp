@@ -7,3 +7,10 @@ ion-tab-bar, ion-tab-button {
 ion-tab-bar {
     border: none;
 }
+
+app-header{
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+}
