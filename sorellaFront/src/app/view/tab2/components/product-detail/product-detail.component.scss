@@ -12,14 +12,14 @@
 }
 
 .product-images{
-    margin-top: 7rem;
+    margin-top: 8.5rem;
     width: 100%;
-    height: 65%;
+    height: 60%;
 }
 
 .product-images__selected-image{
     width: 100%;
-    height: 65%;
+    height: 55%;
     object-fit: cover;
 }
 
@@ -52,8 +52,9 @@
 
 .product-info{
     width: 85%;
+    min-height: 7rem;
     aspect-ratio: 2/1.1;
-    margin: 1.5rem auto 0.5rem auto;
+    margin: 0 auto 0.5rem auto;
     background-color: #ffffff;
     border-radius:2rem;
     display: flex;
