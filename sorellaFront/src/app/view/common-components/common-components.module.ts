@@ -2,7 +2,6 @@ import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductComponent } from './product/product.component';
-import { FabComponent } from './fab/fab.component';
 import { RouterModule } from '@angular/router';
 
 
@@ -10,8 +9,7 @@ import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
-    ProductComponent,
-    FabComponent
+    ProductComponent
   ],
   imports: [
     CommonModule,
@@ -19,8 +17,7 @@ import { RouterModule } from '@angular/router';
     RouterModule
   ],
   exports: [
-    ProductComponent,
-    FabComponent
+    ProductComponent
     ]
 })
 export class CommonComponentsModule { }

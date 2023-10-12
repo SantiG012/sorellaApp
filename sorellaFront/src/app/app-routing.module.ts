@@ -13,12 +13,7 @@ const routes: Routes = [
   {
     path: 'signup',
     loadChildren: () => import('./view/signup/signup.module').then( m => m.SignupPageModule)
-  },
-  {
-    path: 'cart',
-    loadChildren: () => import('./view/cart-view/cart-view.module').then( m => m.CartViewPageModule)
   }
-
 ];
 @NgModule({
   imports: [

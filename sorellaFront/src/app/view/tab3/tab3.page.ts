@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CarProductDto } from 'src/app/domain/DTO/product';
+import { CartStorageService } from 'src/app/application/services/cart-storage.service';
 
 @Component({
   selector: 'app-tab3',
@@ -7,6 +9,27 @@ import { Component } from '@angular/core';
 })
 export class Tab3Page {
 
-  constructor() {}
+  total: number = 0;
+  products!: CarProductDto[] | null;
+ 
+  constructor(private cartStorageService: CartStorageService) { }
+
+  async ionViewWillEnter() {
+    this.products = await this.cartStorageService.getCart();
+    this.calculateTotal()
+  }
+
+  calculateTotal() {
+    this.total = 0;
+    this.products!.forEach(product => {
+      this.total += (product.precio * product.cantidad!);
+    });
+  }
+
+  deleteCartContent(){
+    this.cartStorageService.cleanCart();
+    this.products = [];
+    this.total = 0;
+  }
 
 }
