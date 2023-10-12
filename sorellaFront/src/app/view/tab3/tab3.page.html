@@ -1,58 +1,9 @@
 <ion-content [fullscreen]="true">
-  <ion-card>
+  <ul class="products-list">
+    <app-shopping-cart-product></app-shopping-cart-product>
+  </ul>
 
-    <ion-card-header>
-      <ion-card-title>Shopping cart</ion-card-title>
-      <ion-card-subtitle>Este es tu carrito de compras en el momento: </ion-card-subtitle>
-    </ion-card-header>
-
-    <ion-list>
-      <ion-list-header>
-        <ion-label> <strong> Producto </strong></ion-label>
-        <ion-label> <strong> Precio </strong></ion-label>
-        <ion-label> <strong> Cantidad </strong></ion-label>
-      </ion-list-header>
-
-      <ion-item *ngFor="let product of products">
-        <ion-grid>
-          <ion-row>
-            <ion-col>{{product.nombre}}</ion-col>
-            <ion-col>{{product.precio}}</ion-col>
-            <ion-col>{{product.cantidad}}</ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-item>
-
-    </ion-list>
-
-    <ion-list>
-      <ion-list-header>
-        <ion-label> <h1><strong> Total </strong></h1></ion-label>
-        <ion-label><h1><strong> {{total}} </strong></h1></ion-label>
-      </ion-list-header>
-    </ion-list>
-  </ion-card>
-
- <ion-card>
-  
-  <ion-grid>
-    <ion-row>
-
-      <ion-col>
-        <ion-button expand="block" color="primary" routerLink="/tabs/tab2">Seguir comprando</ion-button>
-      </ion-col>
-
-      <ion-col>
-        <ion-button expand="block" color="primary">Finalizar compra</ion-button>
-      </ion-col>
-
-      <ion-col>
-        <ion-button (click)="deleteCartContent()" expand="block" color="primary">Borrar carrito</ion-button>
-      </ion-col>
-
-    </ion-row>
-  </ion-grid>
-
- </ion-card>
-
+  <div class="total-price">
+    <p></p>
+  </div>
 </ion-content>
