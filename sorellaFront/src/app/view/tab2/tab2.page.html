@@ -1,21 +1,8 @@
 <ion-content [fullscreen]="true">
 
-  <ion-grid>
-    <ion-row class="search-bar">
-      <ion-item class="search-bar__input">
-        <ion-label position="floating">Buscar</ion-label>
-        <ion-input [(ngModel)]="searchInput" (input)="onInputChange()"></ion-input>
-        <ion-icon name="search-outline" slot="start"></ion-icon>
-      </ion-item>
-
-      <ion-item class="search-bar__filter">
-          <ion-select placeholder="filtrar">
-            <ion-select-option value="categoria">Categoría</ion-select-option>
-            <ion-select-option value="producto">producto</ion-select-option>
-          </ion-select>
-      </ion-item>
-    </ion-row>
-  </ion-grid>
+  <div class="search-bar">
+    <input type="text" class="search-bar__input" placeholder="Buscar..." [(ngModel)]="searchInput" (input)="onInputChange()">
+  </div>
 
 
   <div class="product-grid">
