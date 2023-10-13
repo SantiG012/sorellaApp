@@ -3,6 +3,7 @@
     <app-shopping-cart-product
     *ngFor="let cartProductDto of products"
     [cartProductDto]="cartProductDto"
+    (deletedProduct)="removeProduct($event)"
     ></app-shopping-cart-product>
   </ul>
 

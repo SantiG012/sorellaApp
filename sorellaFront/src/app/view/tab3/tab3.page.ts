@@ -36,4 +36,10 @@ export class Tab3Page {
     this.total = 0;
   }
 
+  removeProduct(productId:string):void {
+    this.products = this.products!.filter(product => product._id !== productId);
+    this.calculateTotal();
+  }
+
+
 }

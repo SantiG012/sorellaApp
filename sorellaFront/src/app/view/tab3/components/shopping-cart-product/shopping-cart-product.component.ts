@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CarProductDto } from 'src/app/domain/DTO/product';
 
 @Component({
@@ -8,6 +8,9 @@ import { CarProductDto } from 'src/app/domain/DTO/product';
 })
 export class ShoppingCartProductComponent  implements OnInit {
   @Input() cartProductDto!: CarProductDto;
+
+  @Output()
+  deletedProduct = new EventEmitter<string>();
 
   constructor() { }
 
@@ -21,6 +24,10 @@ export class ShoppingCartProductComponent  implements OnInit {
     if(!this.isUnitValid()){return;}
 
     this.cartProductDto.cantidad!--;
+  }
+
+  onRemoveProductClick():void {
+    this.deletedProduct.emit(this.cartProductDto._id!);
   }
 
   private isUnitValid():boolean {
