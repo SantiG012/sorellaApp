@@ -10,7 +10,7 @@ export class ShoppingCartProductComponent  implements OnInit {
   @Input() cartProductDto!: CarProductDto;
 
   @Output()
-  deletedProduct = new EventEmitter<string>();
+  removeProduct = new EventEmitter<string>();
 
   constructor() { }
 
@@ -27,7 +27,7 @@ export class ShoppingCartProductComponent  implements OnInit {
   }
 
   onRemoveProductClick():void {
-    this.deletedProduct.emit(this.cartProductDto._id!);
+    this.removeProduct.emit(this.cartProductDto._id!);
   }
 
   private isUnitValid():boolean {
