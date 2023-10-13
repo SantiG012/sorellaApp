@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute,Router } from '@angular/router';
 import { Observable, catchError, tap } from 'rxjs';
 import { AbstractProductService } from 'src/app/application/abstractions';
 import { Product } from 'src/app/domain/models';
 import { CarProductDto } from 'src/app/domain/DTO/product'; 
-import { Location } from '@angular/common';
 import { CartStorageService } from 'src/app/application/services/cart-storage.service';
 import { ShoppingCartMapperService } from 'src/app/infrastructure/mappers/shopping-cart-mapper.service';
 
@@ -20,14 +19,14 @@ export class ProductDetailComponent  implements OnInit {
 
   constructor(
     private readonly productService: AbstractProductService,
-    private readonly router: ActivatedRoute,
-    private readonly location: Location,
+    private readonly activatedRoute: ActivatedRoute,
+    private readonly router: Router,
     private readonly cartStorageService: CartStorageService,
     private readonly ShoppingCartMapper: ShoppingCartMapperService,
   ) { }
 
   ngOnInit() {
-    const id = this.router.snapshot.paramMap.get('id');
+    const id = this.activatedRoute.snapshot.paramMap.get('id');
     this.productService.getProductById(id!).pipe(
       tap(product => {
         product = this.sortProductImages(product);
@@ -50,7 +49,7 @@ export class ProductDetailComponent  implements OnInit {
   }
 
   goBack(): void {
-    this.location.back();
+    this.router.navigate(['/tabs/tab2']);
   }
 
   private sortProductImages(product: Product): Product {
