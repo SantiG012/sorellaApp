@@ -19,6 +19,10 @@ export class Tab3Page {
     this.calculateTotal()
   }
 
+  async ionViewWillLeave() {
+    this.cartStorageService.updateCart(this.products!);
+  }
+
   calculateTotal() {
     this.total = 0;
     this.products!.forEach(product => {
