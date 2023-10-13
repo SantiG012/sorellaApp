@@ -1,19 +1,19 @@
 <div class="product">
-  <img class="product__image" src="https://cdn.shopify.com/s/files/1/0210/2968/3222/articles/trending_products_to_sell_in_India_ad8fc9e0-5052-44bf-bd93-7bec4335f5ee.jpg?v=1647462399" alt="">
+  <img class="product__image" [src]="cartProductDto.imagenes[0].url" alt="product-image">
 
   <div class="product__info">
-    <h1 class="product__name">Nombre</h1>
-    <p class="product__description">Descripción</p>
-    <p class="product__price">Precio</p>
+    <h1 class="product__name">{{cartProductDto.nombre}}</h1>
+    <p class="product__description">{{cartProductDto.descripcion}}</p>
+    <p class="product__price">{{cartProductDto.precio | currency}}</p>
   </div>
 
   <div class="product__actions">
     <button class="remove-product"><ion-icon name="close-outline"></ion-icon></button>
 
     <div class="quantity-container">
-      <button class="decrease-product-quantity"><ion-icon name="remove-circle-outline"></ion-icon></button>
-      <p class="product-quantity">1</p>
-      <button class="increase-product-quantity"><ion-icon name="add-circle-outline"></ion-icon></button>
+      <button class="decrease-product-quantity" (click)="removeUnit()"><ion-icon name="remove-circle-outline"></ion-icon></button>
+      <p class="product-quantity">{{cartProductDto.cantidad}}</p>
+      <button class="increase-product-quantity" (click)="addUnit()"><ion-icon name="add-circle-outline"></ion-icon></button>
     </div>
   </div>
 </div>

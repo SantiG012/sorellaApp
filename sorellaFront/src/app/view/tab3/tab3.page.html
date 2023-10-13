@@ -1,6 +1,9 @@
 <ion-content [fullscreen]="true">
   <ul class="products-list">
-    <app-shopping-cart-product></app-shopping-cart-product>
+    <app-shopping-cart-product
+    *ngFor="let cartProductDto of products"
+    [cartProductDto]="cartProductDto"
+    ></app-shopping-cart-product>
   </ul>
 
   <div class="total-price">
