@@ -22,6 +22,10 @@ export class CartStorageService {
     }
   }
 
+  async updateCart(products: CarProductDto[]){
+    await this.productStorageService.set(this.cartKey, products);
+  }
+
   async removeProductFromCart(id: string){
     const cart = await this.getCart();
 

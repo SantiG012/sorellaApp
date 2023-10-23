@@ -1,4 +1,10 @@
+input {
+    border: none;
+}
+
+
 .search-bar{
+    margin-top: 35%;
     width: 100vw;
     display: flex;
     justify-content: center;
@@ -6,30 +12,18 @@
 }
 
 .search-bar__input{
-    flex: 70;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: white;
+    padding: 0 .8rem 0 .8rem;
+    width: 75%;
+    height: 2rem;
+    border-radius: 1rem;
 }
 
-.search-bar__filter{
-    flex: 30;
+.search-bar__input::placeholder{
+    color: #ccc;
+    text-align: center;
 }
 
-ion-card{
-    padding: .1rem;
-    margin: 0.5rem;
-    background-color: transparent;
-}
-
-
-ion-card-header{
-    padding: .2rem;
-}
-
-ion-card-title{
-    font-size: 1.1rem;
-}
 
 .product-grid{
     display: grid;

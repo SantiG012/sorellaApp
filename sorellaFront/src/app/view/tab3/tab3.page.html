@@ -1,17 +1,13 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ul class="products-list">
+    <app-shopping-cart-product
+    *ngFor="let cartProductDto of products"
+    [cartProductDto]="cartProductDto"
+    (removeProduct)="removeProduct($event)"
+    ></app-shopping-cart-product>
+  </ul>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <div class="total-price">
+    <p>Total: <span>{{total | currency}}</span></p>
+  </div>
 </ion-content>

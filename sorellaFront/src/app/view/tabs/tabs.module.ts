@@ -7,6 +7,7 @@ import { TabsPageRoutingModule } from './tabs-routing.module';
 
 import { TabsPage } from './tabs.page';
 import { CommonComponentsModule } from '../common-components/common-components.module';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   imports: [
@@ -16,6 +17,6 @@ import { CommonComponentsModule } from '../common-components/common-components.m
     TabsPageRoutingModule,
     CommonComponentsModule
   ],
-  declarations: [TabsPage]
+  declarations: [TabsPage, HeaderComponent]
 })
 export class TabsPageModule {}

@@ -12,7 +12,6 @@ import { AbstractProductRepository } from 'src/app/domain/repositories';
 import { ProductImplementationRepository } from 'src/app/infrastructure/repositories';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FabComponent } from './view/common-components/fab/fab.component';
 import { AbstractProductStorageService } from './domain/services/storage/abstract-product-storage.service';
 import { ProductStorageService } from './application/services/product-storage.service';
 import { CartStorageService } from './application/services/cart-storage.service';

@@ -1,45 +1,17 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <ion-grid>
-    <ion-row class="search-bar">
-      <ion-item class="search-bar__input">
-        <ion-label position="floating">Buscar</ion-label>
-        <ion-input [(ngModel)]="searchInput" (input)="onInputChange()"></ion-input>
-        <ion-icon name="search-outline" slot="start"></ion-icon>
-      </ion-item>
-
-      <ion-item class="search-bar__filter">
-          <ion-select placeholder="filtrar">
-            <ion-select-option value="categoria">Categoría</ion-select-option>
-            <ion-select-option value="producto">producto</ion-select-option>
-          </ion-select>
-      </ion-item>
-    </ion-row>
-  </ion-grid>
+  <div class="search-bar">
+    <input type="text" class="search-bar__input" placeholder="Buscar..." [(ngModel)]="searchInput" (input)="onInputChange()">
+  </div>
 
 
-  <ion-card>
-    <div class="product-grid">
-      <app-product
-      *ngFor="let product of products$ | async"
-      [product]="product"
-      routerLink="product-detail/{{product._id}}"
-      >
-      </app-product>
-    </div>
-  </ion-card>
+  <div class="product-grid">
+    <app-product
+    *ngFor="let product of products$ | async"
+    [product]="product"
+    routerLink="product-detail/{{product._id}}"
+    >
+    </app-product>
+  </div>
 
 </ion-content>

@@ -1,1 +1,15 @@
 
+ion-tab-bar, ion-tab-button {
+    --background: #f1eded;
+    --color: #000000;
+}
+
+ion-tab-bar {
+    border: none;
+}
+
+app-header{
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
