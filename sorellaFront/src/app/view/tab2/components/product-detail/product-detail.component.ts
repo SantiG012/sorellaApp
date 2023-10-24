@@ -26,7 +26,7 @@ export class ProductDetailComponent  implements OnInit {
   ) { }
 
   ngOnInit() {
-    const id = this.activatedRoute.snapshot.paramMap.get('id');
+    const id = this.getProductIdFromUrl();
     this.productService.getProductById(id!).pipe(
       tap(product => {
         product = this.sortProductImages(product);
@@ -65,5 +65,8 @@ export class ProductDetailComponent  implements OnInit {
     const carProductDto:CarProductDto = this.ShoppingCartMapper.mapFrom(product);
     await this.cartStorageService.addProductToCart(carProductDto);
   }
-
+  
+  private getProductIdFromUrl(): string {
+    return this.activatedRoute.snapshot.paramMap.get('id')!;
+  }
 }
