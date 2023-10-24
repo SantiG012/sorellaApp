@@ -21,7 +21,7 @@ export class AppComponent {
   initializeApp() {
     App.addListener('appUrlOpen', (data: URLOpenListenerEvent) => {
       this.ngZone.run(() => {
-        const slug = this.extractSlug(data.url);
+        const slug = data.url.split(this.getUrlScheme())[1];
         if (slug) {
           this.navigateToslug(slug);
         }
@@ -29,11 +29,12 @@ export class AppComponent {
     });
   }
 
-  private extractSlug(url: string): string {
-    return url.split('.app').pop()!;
-  }
 
   private navigateToslug(slug: string) {
     this.router.navigateByUrl(slug);
+  }
+
+  private getUrlScheme(): string {
+    return process.env['URL_SCHEME']!;
   }
 }
