@@ -28,6 +28,14 @@ input {
 .product-grid{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    margin-top: 1rem;
     grid-gap: 1rem;
     padding: 1rem;
+    max-height: 65%;
+    overflow-y: auto;
+}
+
+.product-grid::-webkit-scrollbar {
+    width: 0;
+    height: 0;
 }
