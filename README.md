@@ -1,1 +1,0 @@
-SorellaApp project
