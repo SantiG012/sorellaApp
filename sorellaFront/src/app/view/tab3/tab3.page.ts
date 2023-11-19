@@ -8,7 +8,7 @@ import { GeolocationService } from 'src/app/application/services/geolocation.ser
   templateUrl: 'tab3.page.html',
   styleUrls: ['tab3.page.scss']
 })
-export class Tab3Page implements AfterViewInit{
+export class Tab3Page{
 
   total: number = 0;
   products!: CarProductDto[] | null;
@@ -17,11 +17,8 @@ export class Tab3Page implements AfterViewInit{
   constructor(private cartStorageService: CartStorageService, private geoLocationService: GeolocationService ) { 
   }
   
-  ngAfterViewInit(): void {
-    this.printGeolocation()
-  }
-
   async ionViewWillEnter() {
+    await this.printGeolocation()
     this.products = await this.cartStorageService.getCart();
     this.calculateTotal()
   }
