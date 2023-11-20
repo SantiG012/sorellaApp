@@ -1,20 +1,24 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { CarProductDto } from 'src/app/domain/DTO/product';
 import { CartStorageService } from 'src/app/application/services/cart-storage.service';
+import { GeolocationService } from 'src/app/application/services/geolocation.service';
 
 @Component({
   selector: 'app-tab3',
   templateUrl: 'tab3.page.html',
   styleUrls: ['tab3.page.scss']
 })
-export class Tab3Page {
+export class Tab3Page{
 
   total: number = 0;
   products!: CarProductDto[] | null;
- 
-  constructor(private cartStorageService: CartStorageService) { }
+  position!: string;
 
+  constructor(private cartStorageService: CartStorageService, private geoLocationService: GeolocationService ) { 
+  }
+  
   async ionViewWillEnter() {
+    await this.printGeolocation()
     this.products = await this.cartStorageService.getCart();
     this.calculateTotal()
   }
@@ -41,5 +45,8 @@ export class Tab3Page {
     this.calculateTotal();
   }
 
+  async printGeolocation() {
+    this.position = await this.geoLocationService.printGeolocation();
+  }
 
 }

@@ -15,6 +15,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AbstractProductStorageService } from './domain/services/storage/abstract-product-storage.service';
 import { ProductStorageService } from './application/services/product-storage.service';
 import { CartStorageService } from './application/services/cart-storage.service';
+import { AbstractGeoLocationService } from './application/abstractions/abstract-geolocation.service';
+import { GeolocationService } from './application/services/geolocation.service';
 
 
 
@@ -24,15 +26,17 @@ import { CartStorageService } from './application/services/cart-storage.service'
     BrowserModule, IonicModule.forRoot(), AppRoutingModule,
     HttpClientModule, ReactiveFormsModule, FormsModule,
     IonicStorageModule.forRoot()
-    ],
+  ],
   providers: [
-    {provide: CartStorageService, useClass: CartStorageService},
+    { provide: CartStorageService, useClass: CartStorageService },
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    { provide:AbstractProductService, useClass:ProductService },
-    { provide: AbstractProductRepository, useClass:ProductImplementationRepository },
-    { provide:AbstractProductStorageService, useClass:ProductStorageService }
+    { provide: AbstractProductService, useClass: ProductService },
+    { provide: AbstractProductRepository, useClass: ProductImplementationRepository },
+    { provide: AbstractProductStorageService, useClass: ProductStorageService },
+    { provide: AbstractGeoLocationService, useClass: GeolocationService }
   ],
 
-  bootstrap: [AppComponent],})
-  
-export class AppModule {}
+  bootstrap: [AppComponent],
+})
+
+export class AppModule { }

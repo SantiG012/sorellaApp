@@ -4,22 +4,33 @@ ul {
     margin: 8.5rem 0 0 0;
 }
 
-.products-list,.total-price{
+.address {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+}
+
+.products-list,
+.total-price {
     width: 100%;
 }
 
-.products-list{
+.products-list {
     height: 60%;
 }
 
-.total-price{
+.total-price {
     height: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.total-price p{
+.total-price p {
     font-size: 1.5rem;
     font-weight: bold;
 }

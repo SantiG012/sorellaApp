@@ -1,12 +1,12 @@
 <ion-content [fullscreen]="true">
   <ul class="products-list">
-    <app-shopping-cart-product
-    *ngFor="let cartProductDto of products"
-    [cartProductDto]="cartProductDto"
-    (removeProduct)="removeProduct($event)"
-    ></app-shopping-cart-product>
+    <app-shopping-cart-product *ngFor="let cartProductDto of products" [cartProductDto]="cartProductDto"
+      (removeProduct)="removeProduct($event)"></app-shopping-cart-product>
   </ul>
 
+  <div class="address">
+    <p>Your current position is: <span>{{position}}</span></p>
+  </div>
   <div class="total-price">
     <p>Total: <span>{{total | currency}}</span></p>
   </div>
