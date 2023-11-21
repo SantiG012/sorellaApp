@@ -1,11 +1,17 @@
+ion-content {
+    margin-top: 8.5rem;
+    max-height: 90%;
+    padding: 0;
+}
+
 ul {
     list-style-type: none;
     padding: 0;
-    margin: 8.5rem 0 0 0;
+    margin: 8.5rem 0 1.5rem 0;
 }
 
 .address {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: bold;
     text-overflow: ellipsis;
     justify-content: center;
@@ -20,11 +26,12 @@ ul {
 }
 
 .products-list {
-    height: 60%;
+    height: 53%;
+    overflow-y: scroll;
 }
 
 .total-price {
-    height: 20%;
+    max-height: 8%;
     display: flex;
     justify-content: center;
     align-items: center;
